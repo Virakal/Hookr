@@ -1,9 +1,18 @@
 import { createSignal } from 'solid-js'
 import './App.css'
 import { translate } from './translator'
+import { Header } from './Header'
+
+function capitaliseFirstLetter(str: string): string {
+	return str.charAt(0).toUpperCase() + str.slice(1)
+}
 
 function getOppositeLang(lang: TranslateLang) {
 	return lang === 'american' ? 'english' : 'american'
+}
+
+function LanguageName(props: { lang: TranslateLang }) {
+	return <span class="languageName">{capitaliseFirstLetter(props.lang)}</span>
 }
 
 function App() {
@@ -11,10 +20,6 @@ function App() {
 	const [output, setOutput] = createSignal('')
 	const [fromLang, setFromLang] = createSignal<TranslateLang>('american')
 	const toLang = () => getOppositeLang(fromLang())
-
-	const capitaliseFirstLetter = (str: string) => {
-		return str.charAt(0).toUpperCase() + str.slice(1)
-	}
 
 	const doTranslate = (e: Event) => {
 		e.preventDefault()
@@ -36,12 +41,12 @@ function App() {
 
 	return (
 		<>
-			<h1>Hookr</h1>
+			<Header />
 
 			<h2>
 				<p>
-					Translate from {capitaliseFirstLetter(fromLang())} to{' '}
-					{capitaliseFirstLetter(toLang())}
+					Translate from <LanguageName lang={fromLang()} /> to{' '}
+					<LanguageName lang={toLang()} />
 				</p>
 				<button
 					type="button"
