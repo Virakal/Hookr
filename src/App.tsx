@@ -1,7 +1,7 @@
 import { createSignal } from 'solid-js'
 import './App.css'
-import { translate } from './translator'
 import { Header } from './Header'
+import { translate } from './translator'
 
 function capitaliseFirstLetter(str: string): string {
 	return str.charAt(0).toUpperCase() + str.slice(1)
