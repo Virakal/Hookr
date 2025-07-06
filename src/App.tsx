@@ -32,7 +32,6 @@ function App() {
 			return
 		}
 
-		// const translatedTerm = translateToAmerican(input.value)
 		const translatedContent = translate(fromLang(), input())
 
 		if (translatedContent) {
