@@ -8,3 +8,11 @@
 .language-name {
 	color: #646cff;
 }
+
+.error-container {
+	background-color: #ca5035;
+	color: #eee;
+	padding: 1.5rem;
+	border-radius: 0.5rem;
+	margin-bottom: 2rem;
+}

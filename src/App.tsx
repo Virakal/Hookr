@@ -18,24 +18,28 @@ function LanguageName(props: { lang: TranslateLang }) {
 function App() {
 	const [input, setInput] = createSignal('')
 	const [output, setOutput] = createSignal('')
+	const [error, setError] = createSignal<string | null>(null)
 	const [fromLang, setFromLang] = createSignal<TranslateLang>('american')
 	const toLang = () => getOppositeLang(fromLang())
 
 	const doTranslate = (e: Event) => {
 		e.preventDefault()
+		setError(null)
 
 		if (!input().trim()) {
-			setOutput('Please enter a term to translate.')
+			setError('Please enter a term to translate.')
+			setOutput('')
 			return
 		}
 
 		// const translatedTerm = translateToAmerican(input.value)
-		const translatedTerm = translate(fromLang(), input())
+		const translatedContent = translate(fromLang(), input())
 
-		if (translatedTerm) {
-			setOutput(`Translated: ${translatedTerm}`)
+		if (translatedContent) {
+			setOutput(translatedContent)
 		} else {
-			setOutput('No translation found.')
+			setError('No translation found.')
+			setOutput('')
 		}
 	}
 
@@ -58,6 +62,12 @@ function App() {
 					Swap
 				</button>
 			</h2>
+
+			{error() && (
+				<div class="error-container">
+					<strong>Error:</strong> {error()}
+				</div>
+			)}
 
 			<form>
 				<input
