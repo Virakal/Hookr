@@ -12,6 +12,10 @@ function App() {
 	const [fromLang, setFromLang] = createSignal<TranslateLang>('american')
 	const toLang = () => getOppositeLang(fromLang())
 
+	const capitaliseFirstLetter = (str: string) => {
+		return str.charAt(0).toUpperCase() + str.slice(1)
+	}
+
 	const doTranslate = (e: Event) => {
 		e.preventDefault()
 
@@ -35,7 +39,10 @@ function App() {
 			<h1>Hookr</h1>
 
 			<h2>
-				Translate from {fromLang()} to {toLang()}
+				<p>
+					Translate from {capitaliseFirstLetter(fromLang())} to{' '}
+					{capitaliseFirstLetter(toLang())}
+				</p>
 				<button
 					type="button"
 					onClick={() => {
