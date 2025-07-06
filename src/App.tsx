@@ -1,31 +1,65 @@
 import { createSignal } from 'solid-js'
 import './App.css'
+import { translate } from './translator'
+
+function getOppositeLang(lang: TranslateLang) {
+	return lang === 'american' ? 'english' : 'american'
+}
 
 function App() {
-	const [count, setCount] = createSignal(0)
+	const [input, setInput] = createSignal('')
+	const [output, setOutput] = createSignal('')
+	const [fromLang, setFromLang] = createSignal<TranslateLang>('american')
+	const toLang = () => getOppositeLang(fromLang())
+
+	const doTranslate = (e: Event) => {
+		e.preventDefault()
+
+		if (!input().trim()) {
+			setOutput('Please enter a term to translate.')
+			return
+		}
+
+		// const translatedTerm = translateToAmerican(input.value)
+		const translatedTerm = translate(fromLang(), input())
+
+		if (translatedTerm) {
+			setOutput(`Translated: ${translatedTerm}`)
+		} else {
+			setOutput('No translation found.')
+		}
+	}
 
 	return (
 		<>
-			<div>
-				<a href="https://vite.dev" target="_blank" rel="noopener">
-					<img src={viteLogo} class="logo" alt="Vite logo" />
-				</a>
-				<a href="https://solidjs.com" target="_blank" rel="noopener">
-					<img src={solidLogo} class="logo solid" alt="Solid logo" />
-				</a>
-			</div>
-			<h1>Vite + Solid</h1>
-			<div class="card">
-				<button onClick={() => setCount((count) => count + 1)}>
-					count is {count()}
+			<h1>Hookr</h1>
+
+			<h2>
+				Translate from {fromLang()} to {toLang()}
+				<button
+					type="button"
+					onClick={() => {
+						setFromLang(getOppositeLang(fromLang()))
+						setOutput('')
+					}}
+				>
+					Swap
 				</button>
-				<p>
-					Edit <code>src/App.tsx</code> and save to test HMR
-				</p>
-			</div>
-			<p class="read-the-docs">
-				Click on the Vite and Solid logos to learn more
-			</p>
+			</h2>
+
+			<form>
+				<input
+					type="text"
+					placeholder="Pattern or URL..."
+					onInput={(e) => setInput(e.currentTarget.value)}
+				/>
+
+				<button type="submit" onClick={doTranslate}>
+					Translate
+				</button>
+			</form>
+
+			<output>{output()}</output>
 		</>
 	)
 }
