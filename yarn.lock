@@ -765,7 +765,7 @@ __metadata:
     solid-js: "npm:^1.9.7"
     typescript: "npm:~5.8.3"
     vite: "npm:^7.0.2"
-    vite-plugin-solid: "npm:^2.11.6"
+    vite-plugin-solid: "npm:^2.11.7"
   languageName: unknown
   linkType: soft
 
@@ -1953,7 +1953,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"vite-plugin-solid@npm:^2.11.6":
+"vite-plugin-solid@npm:^2.11.7":
   version: 2.11.7
   resolution: "vite-plugin-solid@npm:2.11.7"
   dependencies:
