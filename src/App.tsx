@@ -22,8 +22,7 @@ function App() {
 	const [fromLang, setFromLang] = createSignal<TranslateLang>('american')
 	const toLang = () => getOppositeLang(fromLang())
 
-	const doTranslate = (e: Event) => {
-		e.preventDefault()
+	const doTranslate = () => {
 		setError(null)
 
 		if (!input().trim()) {
@@ -58,7 +57,10 @@ function App() {
 					type="button"
 					onClick={() => {
 						setFromLang(getOppositeLang(fromLang()))
-						setOutput('')
+
+						if (output()) {
+							doTranslate()
+						}
 					}}
 				>
 					Swap Languages
