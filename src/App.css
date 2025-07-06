@@ -32,12 +32,25 @@
 	margin: 0;
 }
 
-output {
-	border: 1px solid #666;
+output,
+textarea {
 	background-color: #131320;
-	padding: 1rem;
 	border-radius: 0.5rem;
-	white-space: pre-line;
+	border: 1px solid #666;
+	color: #fff;
 	display: block;
+	font-family: monospace;
+	margin: 0 auto;
+	min-height: 50vh;
+	padding: 1rem;
 	text-align: left;
+	width: 95%;
+}
+
+output {
+	white-space: pre-line;
+}
+
+textarea {
+	height: 100%;
 }
