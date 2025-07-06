@@ -52,6 +52,9 @@ function App() {
 					Translating from <LanguageName lang={fromLang()} /> to{' '}
 					<LanguageName lang={toLang()} />
 				</p>
+			</h2>
+
+			<div class="controls">
 				<button
 					type="button"
 					onClick={() => {
@@ -61,7 +64,11 @@ function App() {
 				>
 					Swap Languages
 				</button>
-			</h2>
+
+				<button type="submit" onClick={doTranslate}>
+					Translate Pattern
+				</button>
+			</div>
 
 			{error() && (
 				<div class="error-container">
@@ -69,19 +76,16 @@ function App() {
 				</div>
 			)}
 
-			<form>
-				<input
-					type="text"
-					placeholder="Pattern or URL..."
-					onInput={(e) => setInput(e.currentTarget.value)}
-				/>
+			<div class="container">
+				<form>
+					<textarea
+						placeholder="Pattern or URL..."
+						onInput={(e) => setInput(e.currentTarget.value)}
+					/>
+				</form>
 
-				<button type="submit" onClick={doTranslate}>
-					Translate
-				</button>
-			</form>
-
-			<output>{output()}</output>
+				<output>{output() || 'Press the translate button...'}</output>
+			</div>
 		</>
 	)
 }
