@@ -12,7 +12,7 @@ function getOppositeLang(lang: TranslateLang) {
 }
 
 function LanguageName(props: { lang: TranslateLang }) {
-	return <span class="languageName">{capitaliseFirstLetter(props.lang)}</span>
+	return <span class="language-name">{capitaliseFirstLetter(props.lang)}</span>
 }
 
 function App() {
