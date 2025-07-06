@@ -27,7 +27,7 @@ function App() {
 		setError(null)
 
 		if (!input().trim()) {
-			setError('Please enter a term to translate.')
+			setError('Please enter a pattern to translate.')
 			setOutput('')
 			return
 		}
