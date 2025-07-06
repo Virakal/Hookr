@@ -49,7 +49,7 @@ function App() {
 
 			<h2>
 				<p>
-					Translate from <LanguageName lang={fromLang()} /> to{' '}
+					Translating from <LanguageName lang={fromLang()} /> to{' '}
 					<LanguageName lang={toLang()} />
 				</p>
 				<button
@@ -59,7 +59,7 @@ function App() {
 						setOutput('')
 					}}
 				>
-					Swap
+					Swap Languages
 				</button>
 			</h2>
 
