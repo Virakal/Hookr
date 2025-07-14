@@ -22,7 +22,7 @@ function App() {
 	const [fromLang, setFromLang] = createSignal<TranslateLang>('american')
 	const toLang = () => getOppositeLang(fromLang())
 
-	const doTranslate = () => {
+	const doTranslate = async () => {
 		setError(null)
 
 		if (!input().trim()) {
@@ -31,7 +31,7 @@ function App() {
 			return
 		}
 
-		const translatedContent = translate(fromLang(), input())
+		const translatedContent = await translate(fromLang(), input())
 
 		if (translatedContent) {
 			setOutput(translatedContent)

@@ -2,12 +2,32 @@ import { terms } from './terms'
 
 const SENTINEL = '⁐~⁐'
 
-export function translate(fromLang: TranslateLang, text: string): string {
+function isValidUrl(str: string): boolean {
+	try {
+		const url = new URL(str)
+		return Boolean(url.protocol.match(/^https?/i))
+	} catch {
+		return false
+	}
+}
+
+export async function translate(
+	fromLang: TranslateLang,
+	text: string,
+): Promise<string> {
 	const fromKey = fromLang === 'american' ? 1 : 0
 	const toKey = fromLang === 'american' ? 0 : 1
 
-	// TODO: is_url(text) - fetch
-	// TODO: is_pdf_url(text) - fetch and translate pdf
+	if (isValidUrl(text.trim())) {
+		const url = text.trim()
+		const response = await fetch('https://api.cors.lol/?url=' + url)
+		const responseText = await response.text()
+		const ele = document.createElement('html')
+		ele.innerHTML = responseText
+		text = ele.querySelector('body')?.innerText || 'Failed to find contents'
+	}
+
+	// TODO: is PDF url
 
 	for (const term of terms) {
 		const fromRegex = new RegExp(`\\b${term[fromKey]}\\b`, 'gi')
