@@ -20,7 +20,7 @@ export async function translate(
 
 	if (isValidUrl(text.trim())) {
 		const url = text.trim()
-		const response = await fetch('https://api.cors.lol/?url=' + url)
+		const response = await fetch(`https://api.cors.lol/?url=${url}`)
 		const responseText = await response.text()
 		const ele = document.createElement('html')
 		ele.innerHTML = responseText
