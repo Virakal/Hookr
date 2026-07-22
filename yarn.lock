@@ -207,7 +207,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@biomejs/biome@npm:^2.5.3":
+"@biomejs/biome@npm:^2.5.4":
   version: 2.5.4
   resolution: "@biomejs/biome@npm:2.5.4"
   dependencies:
@@ -568,7 +568,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@virakal/hookr@workspace:."
   dependencies:
-    "@biomejs/biome": "npm:^2.5.3"
+    "@biomejs/biome": "npm:^2.5.4"
     solid-js: "npm:^1.9.14"
     typescript: "npm:~6.0.3"
     vite: "npm:^8.1.5"
