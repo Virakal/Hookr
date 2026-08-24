@@ -530,9 +530,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"babel-plugin-jsx-dom-expressions@npm:^0.40.6":
-  version: 0.40.7
-  resolution: "babel-plugin-jsx-dom-expressions@npm:0.40.7"
+"babel-plugin-jsx-dom-expressions@npm:^0.40.10":
+  version: 0.40.10
+  resolution: "babel-plugin-jsx-dom-expressions@npm:0.40.10"
   dependencies:
     "@babel/helper-module-imports": "npm:7.18.6"
     "@babel/plugin-syntax-jsx": "npm:^7.18.6"
@@ -541,31 +541,31 @@ __metadata:
     parse5: "npm:^7.1.2"
   peerDependencies:
     "@babel/core": ^7.20.12
-  checksum: 10c0/9e1ad7f03893e5486692533e03cfb2e36c6c1e0ff30be11015db03794530eaec8c3e5ff3534bf096ebfec711153d106b96cc93bd926228064fbc8b8142b59591
+  checksum: 10c0/e208e56e355f5cd45436e2b3f747e62e715fdf676a6cdbf0ea995e283b86d487f14c7d2e6291c5363f6cb54e11baece709d15754b9a556a09a4649de8179a98d
   languageName: node
   linkType: hard
 
 "babel-preset-solid@npm:^1.8.4":
-  version: 1.9.12
-  resolution: "babel-preset-solid@npm:1.9.12"
+  version: 1.9.15
+  resolution: "babel-preset-solid@npm:1.9.15"
   dependencies:
-    babel-plugin-jsx-dom-expressions: "npm:^0.40.6"
+    babel-plugin-jsx-dom-expressions: "npm:^0.40.10"
   peerDependencies:
     "@babel/core": ^7.0.0
-    solid-js: ^1.9.12
+    solid-js: ^1.9.15
   peerDependenciesMeta:
     solid-js:
       optional: true
-  checksum: 10c0/568dfb814dc89dc1c4f751b91c6867c9a64346434b9e96e1281568cd9b87cfe44495ecc45d9116d0bc9d68d4420a0767707b23b76a7fc65f919e6d8b265d6e1d
+  checksum: 10c0/f03e974c61ea2cc0712443461d1ef5b54a0e414e5f760548dcc150505c7e164b46ffca314409ab00efb634b2ee338294c138c91e9c54d6d1e2790a06d64b0de5
   languageName: node
   linkType: hard
 
 "baseline-browser-mapping@npm:^2.11.12":
-  version: 2.11.14
-  resolution: "baseline-browser-mapping@npm:2.11.14"
+  version: 2.11.18
+  resolution: "baseline-browser-mapping@npm:2.11.18"
   bin:
     baseline-browser-mapping: dist/cli.cjs
-  checksum: 10c0/b0d248660ed8a09b0738fb9ca383668e8e445ad23b3efa8a5c41ee91fdf09399766513f97e5effd77e2e5027c1eec225f84bbfdf01586871e5ba2bb4cce8ea83
+  checksum: 10c0/f7a3860b5e3cb1cf650275a7202e753cb0db68e5cccb2b9395f5a37667fb1dd43eb22b7bd3ecd6f9f78c6ff73ae5481245ecddb55844c466ec46cddfe1ac0d1a
   languageName: node
   linkType: hard
 
@@ -632,9 +632,9 @@ __metadata:
   linkType: hard
 
 "electron-to-chromium@npm:^1.5.402":
-  version: 1.5.405
-  resolution: "electron-to-chromium@npm:1.5.405"
-  checksum: 10c0/6e85abde0e3c77945c3cdd6f28741cba268474a62bfbe8c59c5728438a03e689d1df74fd4526a73064f452350ef7fd0b8edb721fa979a791813b81ec2b1a0d8c
+  version: 1.5.412
+  resolution: "electron-to-chromium@npm:1.5.412"
+  checksum: 10c0/09834068e660fe6d888863e0a7f1ae4f2f42d9c77822d7a864eb79dc1643fb48c0b806cb17b162ed1f8794533d9299d5abdb14c3a10939c9276674f0ff9a8f9a
   languageName: node
   linkType: hard
 
