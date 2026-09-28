@@ -20,7 +20,7 @@
 			"solid": "recommended"
 		},
 		"rules": {
-			"recommended": true
+			"preset": "recommended"
 		}
 	},
 	"javascript": {
